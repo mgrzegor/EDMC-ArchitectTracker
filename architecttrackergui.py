@@ -23,7 +23,7 @@ class ArchitectTrackerGUI(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
         self.title("Architect Tracker")
-        self.geometry("800x600")
+        self.geometry("320x200")
         self.configure(bg=self.bgBlack)
         self.protocol("WM_DELETE_WINDOW", self.on_close)
         self.column_visibility, self.hide_provided, self.theme, self.column_names, self.trans_bg, self.win_top, self.opac_amount = helpers.load_gui_settings()
@@ -159,7 +159,7 @@ class ArchitectTrackerGUI(tk.Toplevel):
             self.style.configure("ArchTrack.Treeview",
                                     background=ArchitectTrackerGUI.bgBlack,
                                     foreground=ArchitectTrackerGUI.edOrange,
-                                    rowheight=24,
+                                    rowheight=20,
                                     selectbackground=ArchitectTrackerGUI.bgBlack)
             self.style.configure("ArchTrack.TCombobox",
                                     background=ArchitectTrackerGUI.bgBlack,
@@ -180,7 +180,7 @@ class ArchitectTrackerGUI(tk.Toplevel):
                                 background=[('readonly', ArchitectTrackerGUI.bgBlack)]) # Background color of the dropdown list
         elif self.theme == "Light Mode":
             self.style.theme_use("default")  # Use default theme
-            self.style.configure("Treeview", rowheight=24)
+            self.style.configure("Treeview", rowheight=20)
 
     def _build_info_widgets(self):
         frame = ttk.Frame(self, padding=10, style="ArchTrack.TFrame")
